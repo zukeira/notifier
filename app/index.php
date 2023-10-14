@@ -2,7 +2,7 @@
 <html>
 <body>
   <font face="Arial">
-    <h1>Add Contact</h1>
+    <h1>Bem vindo a Renova</h1>
   </font>
 
 <?php
