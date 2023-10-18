@@ -41,7 +41,7 @@ EOT
 
 # 4- Deploy PHP app
 cd /tmp
-git clone https://github.com/kledsonhugo/notifier
+git clone https://github.com/zukeira/notifier
 cp /tmp/notifier/app/*.php /var/www/html/
 # mv /var/www/html/sendsms.php /var/www/html/index.php
 rm -rf /tmp/notifier
