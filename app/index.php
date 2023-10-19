@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1>Bem vindo a Renova</h1>
+  <h1>Bem vindo a Renova!</h1>
 
   <?php
   /* Connect to MySQL and select the database. */
@@ -65,8 +65,8 @@
   <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
     <table>
       <tr>
-        <td><b>Name</b></td>
-        <td><b>Cellphone</b></td>
+        <td><b>Nome</b></td>
+        <td><b>CPF</b></td>
       </tr>
       <tr>
         <td>
@@ -94,7 +94,7 @@
       <th>Cellphone</th>
     </tr>
     <?php
-    $result = mysqli_query($connection, "SELECT * FROM USERS");
+    # $result = mysqli_query($connection, "SELECT * FROM USERS");
 
     while ($query_data = mysqli_fetch_row($result)) {
       echo "<tr>";
