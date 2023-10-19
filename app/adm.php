@@ -4,8 +4,6 @@
 <head> 
 <body>
 
-/* Connect to MySQL and select the database. */
-
 <?php
 
 $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
@@ -20,8 +18,8 @@ $database = mysqli_select_db($connection, DB_DATABASE);
 <table>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Cellphone</th>
+      <th>Nome</th>
+      <th>CPF</th>
     </tr>
     <?php
    $result = mysqli_query($connection, "SELECT * FROM USERS");
@@ -35,6 +33,7 @@ $database = mysqli_select_db($connection, DB_DATABASE);
     }
     ?>
   </table>
+  
 </body>
 </head>
 </html>

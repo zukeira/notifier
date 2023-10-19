@@ -37,6 +37,14 @@
       border: none;
       cursor: pointer;
     }
+
+    a{
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -87,10 +95,7 @@
 
 <a href="adm.php">Administrador</a>
 
-<!--<form>
-        <input type="submit" value="Administrador" onclick="redirecionarParaPagina()" />
-</form> -->
-    
+
   <!-- Clean up. -->
   <?php
   mysqli_free_result($result);
