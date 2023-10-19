@@ -1,6 +1,13 @@
 <?php include "../config.php"; ?>
 <html>
 <head>
+    <script type="text/javascript">
+        function redirecionarParaPagina() {
+            window.location.href = 'adm.php';
+        }
+    </script>
+
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -65,8 +72,8 @@
   <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
     <table>
       <tr>
-        <td><b>Name</b></td>
-        <td><b>Cellphone</b></td>
+        <td><b>Nome</b></td>
+        <td><b>CPF</b></td>
       </tr>
       <tr>
         <td>
@@ -84,8 +91,10 @@
     </table>
   </form>
 
-
-
+  <form>
+        <input type="submit" value="Administrador" onclick="redirecionarParaPagina()" />
+    </form>
+    
   <!-- Clean up. -->
   <?php
   mysqli_free_result($result);
