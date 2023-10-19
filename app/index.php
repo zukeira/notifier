@@ -85,7 +85,7 @@
     </table>
   </form>
 
-<a href="/app/adm.php">Administrador</a>
+<a href="adm.php">Administrador</a>
 
 <!--<form>
         <input type="submit" value="Administrador" onclick="redirecionarParaPagina()" />
