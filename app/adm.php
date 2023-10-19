@@ -1,7 +1,14 @@
+<?php include "../config.php"; ?>
+
+<html>
+<head> 
+<body>
+
+
   <!-- Display table data -->
   <br>
   <h1>Contact List</h1>
-  <table>
+<table>
     <tr>
       <th>ID</th>
       <th>Name</th>
@@ -19,3 +26,6 @@
     }
     ?>
   </table>
+</body>
+</head>
+</html>
