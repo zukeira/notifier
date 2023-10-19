@@ -39,7 +39,7 @@
   </style>
 </head>
 <body>
-  <h1>Bem vindo a Renova!</h1>
+  <h1>Bem vindo a Renova</h1>
 
   <?php
   /* Connect to MySQL and select the database. */
@@ -65,8 +65,8 @@
   <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
     <table>
       <tr>
-        <td><b>Nome</b></td>
-        <td><b>CPF</b></td>
+        <td><b>Name</b></td>
+        <td><b>Cellphone</b></td>
       </tr>
       <tr>
         <td>
@@ -84,70 +84,26 @@
     </table>
   </form>
 
-  <!-- Display table data -->
-  <br>
-  <h1>Contact List</h1>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Cellphone</th>
-    </tr>
-    <?php
-    # $result = mysqli_query($connection, "SELECT * FROM USERS");
-
-    while ($query_data = mysqli_fetch_row($result)) {
-      echo "<tr>";
-      echo "<td align=\"center\">", $query_data[0], "</td>",
-      "<td>", $query_data[1], "</td>",
-      "<td>", $query_data[2], "</td>";
-      echo "</tr>";
-    }
-    ?>
-  </table>
-
-  <!-- Clean up. -->
   <?php
-  mysqli_free_result($result);
-  mysqli_close($connection);
+  if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if ($username === "fiap" && $password === "fiap") {
+      // O login do administrador foi bem-sucedido, redirecione para a página da tabela de contatos.
+      header("Location: admin_page.php");
+      exit();
+    }
+  }
   ?>
+
+  <!-- Formulário de login do administrador -->
+  <h2>Administrador</h2>
+  <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
+    <input type="text" name="username" placeholder="Usuário" required>
+    <input type="password" name="password" placeholder="Senha" required>
+    <input type="submit" value="Login">
+  </form>
 
 </body>
 </html>
-<?php
-/* Add a User to the table. */
-function AddUser($connection, $name, $cellphone) {
-  $n = mysqli_real_escape_string($connection, $name);
-  $c = mysqli_real_escape_string($connection, $cellphone);
-
-  $query = "INSERT INTO USERS (NAME, CELLPHONE) VALUES ('$n', '$c');";
-
-  if (!mysqli_query($connection, $query)) echo ("<p>Error adding employee data.</p>");
-}
-
-/* Check whether the table exists and, if not, create it. */
-function VerifyUsersTable($connection, $dbName) {
-  if (!TableExists("USERS", $connection, $dbName)) {
-    $query = "CREATE TABLE USERS (
-         ID int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-         NAME VARCHAR(45),
-         CELLPHONE VARCHAR(90)
-       )";
-
-    if (!mysqli_query($connection, $query)) echo ("<p>Error creating table.</p>");
-  }
-}
-
-/* Check for the existence of a table. */
-function TableExists($tableName, $connection, $dbName) {
-  $t = mysqli_real_escape_string($connection, $tableName);
-  $d = mysqli_real_escape_string($connection, $dbName);
-
-  $checktable = mysqli_query($connection,
-    "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_NAME = '$t' AND TABLE_SCHEMA = '$d'");
-
-  if (mysqli_num_rows($checktable) > 0) return true;
-
-  return false;
-}
-?>
