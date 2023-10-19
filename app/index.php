@@ -4,9 +4,13 @@
   
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Roboto;
+      background-repeat: no-repeat;
+      background-size: cover;
       text-align: center;
-      background-color: #f0f0f0;
+      background: linear-gradient(120deg, #ffffff, #00cc76, #73ffca);
+      height: 100vh;
+      overflow: hidden;
     }
     h1 {
       color: #333;
@@ -39,11 +43,15 @@
     }
 
     a{
-      background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
+      width: 100%;
+      height: 50px;
+      border: 1px solid;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: 700;
       cursor: pointer;
+      background-color: #00cc76;
+      color: #ffffff;
     }
   </style>
 </head>
