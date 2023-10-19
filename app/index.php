@@ -1,13 +1,7 @@
 <?php include "../config.php"; ?>
 <html>
 <head>
-    <script type="text/javascript">
-        function redirecionarParaPagina() {
-            window.location.href = 'adm.php';
-        }
-    </script>
-
-
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -91,9 +85,11 @@
     </table>
   </form>
 
-  <form>
+<a href="/app/adm.php">Administrador</a>
+
+<!--<form>
         <input type="submit" value="Administrador" onclick="redirecionarParaPagina()" />
-    </form>
+</form> -->
     
   <!-- Clean up. -->
   <?php
