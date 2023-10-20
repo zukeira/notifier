@@ -10,8 +10,8 @@
       background-repeat: no-repeat;
       background-size: cover;
       background: linear-gradient(120deg, #ffffff, #00cc76, #73ffca);
-      height: 100vh;
-      overflow: hidden;
+      height: 100%;
+      overflow: auto; /* Adicionando rolagem vertical */
     }
     h1 {
       color: #333;
@@ -43,12 +43,14 @@
       cursor: pointer;
     }
     a {
-      background-color: #333;
+      font-size: 20px;
+      background-color: transparent;
       color: #fff;
       padding: 10px 20px;
       border: none;
       cursor: pointer;
       text-decoration: none;
+      transition: color 0.3s;
     }
     .menu {
       display: flex;
@@ -57,7 +59,7 @@
       padding: 10px 0;
     }
     .menu a:hover {
-      background-color: #73ffca;
+      color: #73ffca;
     }
     .icon {
       font-size: 27px;
@@ -65,33 +67,19 @@
     .green-leaf-icon {
       color: green;
     }
-    /* Estilos para as barras de progresso */
-    .progress-bars {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .progress-bar {
-      margin: 10px 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
-    }
-
-    .label {
-      flex: 1;
-      margin-right: 10px;
-    }
-
-    .bar {
-      flex: 5;
-      height: 20px;
-      background-color: #00cc76;
-      transition: width 0.5s;
-    }
-
-    .bar:hover {
-      width: calc(var(--data-width) + 10%);
+  </style>
+  <style>
+    @media screen and (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu a {
+        margin: 5px;
+      }
+      .icon {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -120,24 +108,27 @@
   <!-- Seção de Valor -->
   <section id="valor">
     <h2>Valor</h2>
-    <div class="progress-bars">
-      <div class="progress-bar">
-        <span class="label">AWS</span>
-        <div class="bar" style="width: 50%;" data-width="50"></div>
-      </div>
-      <div class="progress-bar">
-        <span class="label">Lixeira</span>
-        <div class="bar" style="width: 80%;" data-width="80"></div>
-      </div>
-      <div class "progress-bar">
-        <span class="label">Manutenção</span>
-        <div class="bar" style="width: 20%;" data-width="20"></div>
-      </div>
-      <div class="progress-bar">
-        <span class="label">Marketing</span>
-        <div class="bar" style="width: 40%;" data-width="40"></div>
-      </div>
-    </div>
+	<img src="imagens/01.png" />
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <!-- Conteúdo adicional para criar uma barra de rolagem -->
+    Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem 
+	 Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem 
+	 Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem </br>
+     Conteúdo adicional para criar uma barra de rolagem 
+    </p>
   </section>
 
   <!-- Seção de Cadastro -->
