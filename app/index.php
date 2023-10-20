@@ -2,7 +2,63 @@
 <html>
 <link rel="stylesheet" href="renova.css" />
 <head>
-
+  <style>
+    body {
+      font-family: Roboto;
+      text-align: center;
+      background: linear-gradient(120deg, #ffffff, #00cc76, #73ffca);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    table, th, td {
+      border: 2px solid #333;
+    }
+    th, td {
+      padding: 10px;
+    }
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+    input[type="text"] {
+      padding: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    a {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      padding: 10px 0;
+    }
+    .menu a:hover {
+      background-color: #444;
+    }
+  </style>
 </head>
 <body>
   <h1>Bem vindo a Renova</h1>
