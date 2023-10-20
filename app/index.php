@@ -1,16 +1,12 @@
 <?php include "../config.php"; ?>
 <html>
-<link rel="stylesheet" href="renova.css" />
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
-      font-family: Roboto;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background: linear-gradient(120deg, #ffffff, #00cc76, #73ffca);
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
+      background-color: #f0f0f0;
     }
     h1 {
       color: #333;
@@ -51,27 +47,33 @@
     }
     .menu {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       background-color: #333;
       padding: 10px 0;
     }
     .menu a:hover {
       background-color: #444;
     }
+    .icon {
+      font-size: 24px;
+    }
+    .green-leaf-icon {
+      color: green;
+    }
   </style>
 </head>
 <body>
-  <h1>Bem vindo a Renova</h1>
   <div class="menu">
-    <a href="#proposta">Proposta</a>
+    <a href="#proposta" class="green-leaf-icon"><i class="fas fa-leaf"></i> Proposta</a>
     <a href="#produto">Produto</a>
     <a href="#valor">Valor</a>
     <a href="#cadastro">Cadastro</a>
+    <a href="adm.php" class="icon"><i class="fas fa-user"></i> Administrador</a>
   </div>
 
   <!-- Seção de Proposta -->
   <section id="proposta">
-    <h2>Proposta</h2>
+    <h1><i class="fas fa-leaf"></i> Proposta</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
   </section>
 
@@ -101,7 +103,7 @@
             <input type="text" name="NAME" maxlength="45" />
           </td>
           <td>
-            <input type="text" name="CELLPHONE" maxlength="90" />
+            <input type="text" name "CELLPHONE" maxlength="90" />
           </td>
         </tr>
         <tr>
@@ -112,7 +114,5 @@
       </table>
     </form>
   </section>
-
-  <a href="adm.php">Administrador</a>
 </body>
 </html>
