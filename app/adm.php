@@ -30,7 +30,7 @@ $database = mysqli_select_db($connection, DB_DATABASE);
       "<td>", $query_data[1], "</td>",
       "<td>", $query_data[2], "</td>";
       echo "</tr>";
-    }
+    } 
     ?>
   </table>
   
