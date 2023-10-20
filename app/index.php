@@ -108,7 +108,7 @@
   <!-- Seção de Valor -->
   <section id="valor">
     <h2>Valor</h2>
-	<img src="imagens/01.png" />
+	<img src="/images/01.png" />
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <!-- Conteúdo adicional para criar uma barra de rolagem -->
     Conteúdo adicional para criar uma barra de rolagem </br>
      Conteúdo adicional para criar uma barra de rolagem </br>
@@ -127,9 +127,9 @@
      Conteúdo adicional para criar uma barra de rolagem </br>
      Conteúdo adicional para criar uma barra de rolagem </br>
      Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem 
-    </p>
-  </section>
+      Conteúdo adicional para criar uma barra de rolagem 
+      </p>
+    </section>
 
   <!-- Seção de Cadastro -->
   <section id="cadastro">
