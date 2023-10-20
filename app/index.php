@@ -67,6 +67,133 @@
     .green-leaf-icon {
       color: green;
     }
+
+    .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 29vw;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .center h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .footer h1{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+  }
+  
+  .center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  
+  form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  .txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    background: #00cc76;
+    transition: .5s;
+  }
+  
+  .txt_field input:focus ~ label,
+  .txt_field input:valid ~ label{
+    top: -5px;
+    color: #00cc76;
+  }
+  
+  .txt_field input:focus ~ span::before,
+  .txt_field input:Valid ~ span::before{
+    width: 100%;
+  }
+  
+  .pass{
+    margin: -5px 0 20px 5px;
+    color: #e0f9ef;
+    cursor: pointer;
+  }
+  
+  .pass:hover{
+    text-decoration: underline;
+  }
+  
+  input[type="Submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #00cc76;
+    color: #ffffff;
+  }
+  
+  input[type="Submit"]:hover{
+    background: #73ffca;
+    color: #e9f4fb;
+    transition: .5s;
+  }
+  
+  .signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+  }
+  
+  .signup_link a{
+    color: #00cc76;
+    text-decoration: none;
+  }
+  
+  .signup_link a:hover{
+    text-decoration: underline;
+  }
+  
+  .HomeAbout{
+    width: 100vw;
+    height: 25vh;
+  }
+
   </style>
   <style>
     @media screen and (max-width: 768px) {
@@ -93,64 +220,35 @@
     <a href="adm.php" class="icon"><i class="fas fa-user"></i></a>
   </div>
 
-  <!-- Seção de Proposta -->
-  <section id="proposta">
-    <h1> Proposta</h1>
-    <p>Plataforma em que você é o principal agente do processo de reciclagem do lixo. Deposite latinhas em nossas lixeiras inteligentes e receba um valor pelo lixo reciclado.</p>
-  </section>
-
-  <!-- Seção de Produto -->
-  <section id="produto">
-    <h2>Produto</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </section>
-
-  <!-- Seção de Valor -->
-  <section id="valor">
-    <h2>Valor</h2>
-	<img src="../images/01.png" />
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <!-- Conteúdo adicional para criar uma barra de rolagem -->
-    Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem 
-	 Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem 
-	 Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-     Conteúdo adicional para criar uma barra de rolagem </br>
-      Conteúdo adicional para criar uma barra de rolagem 
-      </p>
-    </section>
+<br>
+<br>
+<br>
 
   <!-- Seção de Cadastro -->
   <section id="cadastro">
-    <h2>Cadastro</h2>
     <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
-      <table>
-        <tr>
-          <td><b>Nome</b></td>
-          <td><b>CPF</b></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="text" name="NAME" maxlength="45" />
-          </td>
-          <td>
-            <input type="text" name="CELLPHONE" maxlength="90" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <input type="submit" value="Cadastrar" />
+      <div class="container">
+        <div class="center">
+            <h1>Área de Cadastro</h1>
+            <form method="POST" action="">
+                <div class="txt_field">
+                    <input type="text" name="name" required>
+                    <span></span>
+                    <label>Nome</label>
+                </div>
+                <div class="txt_field">
+                  <input type="text" name="cpassword" required>
+                  <span></span>
+                  <label>Celular</label>
+              </div>
+                <input type="submit" value="Cadastrar" />
+                <div class="signup_link">
+                    Possui conta? <a href="loginForm.php">Entre aqui</a>
+                </div>
+            </form>
+        </div>
+      </div>
+            
           </td>
         </tr>
       </table>
