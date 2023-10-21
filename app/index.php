@@ -59,7 +59,7 @@
       background-color: #00cc76;
     }
     .menu a{
-      height: 5vh;
+      height: 4.5vh;
       text-align: center;
       display: inline-block;
     }
@@ -205,6 +205,16 @@
     height: 25vh;
   }
 
+  .footer {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: #00cc76;
+  color: #fff;
+}
+
   </style>
   <style>
     @media screen and (max-width: 768px) {
@@ -213,10 +223,10 @@
         align-items: center;
       }
       .menu a {
-        margin: 5px;
+        margin: 5%;
       }
       .icon {
-        margin-top: 10px;
+        margin-top: 10%;
       }
     }
   </style>
@@ -251,7 +261,7 @@
                 </div>
                 <input type="submit" value="Cadastrar" />
                 <div class="signup_link">
-                    Possui conta? <a href="loginForm.php">Entre aqui!</a>
+                    Possui conta? <a href="loginForm.php">Entre aqui</a>
                 </div>
             </form>
         </div>
@@ -262,5 +272,8 @@
       </table>
     </form>
   </section>
+  <div class="footer">
+    <h2>Grupo InnovaTech. Todos os direitos reservados.</h2>
+  </div>
 </body>
 </html>
