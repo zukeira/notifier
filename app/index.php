@@ -265,29 +265,28 @@
   }
 ?>
   <!-- Seção de Cadastro -->
-  <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
-      <table border="0">
-        <tr>
-          <td><b>Name</b></td>
-          <td><b>Cellphone</b></td>
-        </tr>
-        <tr>
-          <td>
-            <input type="text" name="NAME" maxlength="45" size="30" />
-          </td>
-          <td>
-            <input type="text" name="CELLPHONE" maxlength="90" size="15" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="submit" value="Add" />
-          </td>
-        </tr>
-      </table>
-  </form>
-
-
+  <section id="cadastro">
+    <div class= "container">
+      <div class="center">
+        <h1>Área de Cadastro</h1>
+        <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
+          <table border="0">
+            <div class="txt_field">
+              <input type="text" name="name" required>
+              <span></span>
+              <label>Nome</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" name="CELLPHONE" required>
+              <span></span>
+              <label>CPF</label>
+            </div>
+            <input type="submit" value="Cadastrar" />
+          </table>
+        </form>
+      </div>
+    </div>  
+  </section>
 
   <div class="footer">
     <h2>Grupo InnovaTech. Todos os direitos reservados.</h2>
