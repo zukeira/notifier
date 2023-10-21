@@ -266,31 +266,29 @@
 ?>
   <!-- Seção de Cadastro -->
   <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
-      <tr>
-        <td><b>Name</b></td>
-        <td><b>Cellphone</b></td>
-      </tr>
-      <tr>
-        <td>
-          <input type="text" name="NAME" maxlength="45" size="30" />
-        </td>
-        <td>
-          <input type="text" name="CELLPHONE" maxlength="90" size="15" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input type="submit" value="Add" />
-        </td>
-      </tr>
-    </table>
-</form>
-            
+      <table border="0">
+        <tr>
+          <td><b>Name</b></td>
+          <td><b>Cellphone</b></td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="NAME" maxlength="45" size="30" />
+          </td>
+          <td>
+            <input type="text" name="CELLPHONE" maxlength="90" size="15" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Add" />
           </td>
         </tr>
       </table>
-    </form>
-  </section>
+  </form>
+
+
+
   <div class="footer">
     <h2>Grupo InnovaTech. Todos os direitos reservados.</h2>
   </div>
