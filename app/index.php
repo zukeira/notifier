@@ -265,29 +265,26 @@
   }
 ?>
   <!-- Seção de Cadastro -->
-  <section id="cadastro">
-    <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
-      <div class="container">
-        <div class="center">
-            <h1>Área de Cadastro</h1>
-            <form method="POST" action="">
-                <div class="txt_field">
-                    <input type="text" name="name" required>
-                    <span></span>
-                    <label>Nome</label>
-                </div>
-                <div class="txt_field">
-                  <input type="text" name="cpassword" required>
-                  <span></span>
-                  <label>CPF</label>
-                </div>
-                <input type="submit" value="Cadastrar" />
-                <div class="signup_link">
-                    Possui conta? <a href="loginForm.php">Entre aqui</a>
-                </div>
-            </form>
-        </div>
-      </div>
+  <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Cellphone</b></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="NAME" maxlength="45" size="30" />
+        </td>
+        <td>
+          <input type="text" name="CELLPHONE" maxlength="90" size="15" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="Add" />
+        </td>
+      </tr>
+    </table>
+</form>
             
           </td>
         </tr>
