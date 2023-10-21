@@ -17,6 +17,7 @@
     }
 
     h1 {
+      text-align: center;
       color: #333;
     }
     table {
@@ -85,7 +86,7 @@
     <a href="#proposta">Sobre</a>
     <a href="#produto">Nosso Produto</a>
     <a href="#valor">Valores</a>
-    <a href="#cadastro">Cadastro</a>
+    <a href="index.php">Cadastro</a>
     <a href="#cadastro">Contato</a>
     <a href="adm.php" class="icon"><i class="fas fa-user"></i></a>
   </div>
