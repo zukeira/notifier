@@ -257,7 +257,7 @@
   VerifyUsersTable($connection, DB_DATABASE);
 
   /* If input fields are populated, add a row to the USERS table. */
-  $user_name = htmlentities($_POST['NAME']);
+  $user_name = htmlentities($_POST['NOME']);
   $user_cellphone = htmlentities($_POST['CELLPHONE']);
 
   if (strlen($user_name) || strlen($user_cellphone)) {
@@ -272,7 +272,7 @@
         <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
           <table border="0">
             <div class="txt_field">
-              <input type="text" name="name" required>
+              <input type="text" name="NOME" required>
               <span></span>
               <label>Nome</label>
             </div>
@@ -295,11 +295,11 @@
   <?php
 
 /* Add an User to the table. */
-function AddUser($connection, $name, $cellphone) {
-   $n = mysqli_real_escape_string($connection, $name);
+function AddUser($connection, $nome, $cellphone) {
+   $n = mysqli_real_escape_string($connection, $nome);
    $c = mysqli_real_escape_string($connection, $cellphone);
 
-   $query = "INSERT INTO USERS (NAME, CELLPHONE) VALUES ('$n', '$c');";
+   $query = "INSERT INTO USERS (NOME, CELLPHONE) VALUES ('$n', '$c');";
 
    if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
 }
@@ -310,7 +310,7 @@ function VerifyUsersTable($connection, $dbName) {
   {
      $query = "CREATE TABLE USERS (
          ID int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-         NAME VARCHAR(45),
+         NOME VARCHAR(45),
          CELLPHONE VARCHAR(90)
        )";
 
