@@ -272,17 +272,17 @@
         <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
           <table border="0">
             <div class="txt_field">
-              <input type="text" name="NAME" required>
+              <input type="text" name="name" required>
               <span></span>
               <label>Nome</label>
             </div>
             <div class="txt_field">
-              <input type="text" name="CELLPHONE" required>
+              <input type="text" name="cellphone" required>
               <span></span>
               <label>CPF</label>
             </div>
           </table>
-          <input type="submit" value="Cadastrar" />
+              <input type="submit" value="Cadastrar" />
         </form>
       </div>
     </div>  
