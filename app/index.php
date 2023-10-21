@@ -214,7 +214,6 @@
   background-color: #00cc76;
   color: #fff;
 }
-
   </style>
   <style>
     @media screen and (max-width: 768px) {
@@ -230,7 +229,10 @@
       }
     }
   </style>
+
+
 </head>
+
 <body>
   <div class="menu">
     <a href="#proposta" class="green-leaf-icon"><i class="fas fa-leaf"></i> Renova</a>
@@ -242,6 +244,26 @@
     <a href="adm.php" class="icon"><i class="fas fa-user"></i></a>
   </div>
 
+  <?php
+
+  /* Connect to MySQL and select the database. */
+  $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+
+  if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
+
+  $database = mysqli_select_db($connection, DB_DATABASE);
+
+  /* Ensure that the USERS table exists. */
+  VerifyUsersTable($connection, DB_DATABASE);
+
+  /* If input fields are populated, add a row to the USERS table. */
+  $user_name = htmlentities($_POST['NAME']);
+  $user_cellphone = htmlentities($_POST['CELLPHONE']);
+
+  if (strlen($user_name) || strlen($user_cellphone)) {
+    AddUser($connection, $user_name, $user_cellphone);
+  }
+?>
   <!-- Seção de Cadastro -->
   <section id="cadastro">
     <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
@@ -275,5 +297,47 @@
   <div class="footer">
     <h2>Grupo InnovaTech. Todos os direitos reservados.</h2>
   </div>
+
+  <?php
+
+/* Add an User to the table. */
+function AddUser($connection, $name, $cellphone) {
+   $n = mysqli_real_escape_string($connection, $name);
+   $c = mysqli_real_escape_string($connection, $cellphone);
+
+   $query = "INSERT INTO USERS (NAME, CELLPHONE) VALUES ('$n', '$c');";
+
+   if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
+}
+
+/* Check whether the table exists and, if not, create it. */
+function VerifyUsersTable($connection, $dbName) {
+  if(!TableExists("USERS", $connection, $dbName))
+  {
+     $query = "CREATE TABLE USERS (
+         ID int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+         NAME VARCHAR(45),
+         CELLPHONE VARCHAR(90)
+       )";
+
+     if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>");
+  }
+}
+
+/* Check for the existence of a table. */
+function TableExists($tableName, $connection, $dbName) {
+  $t = mysqli_real_escape_string($connection, $tableName);
+  $d = mysqli_real_escape_string($connection, $dbName);
+
+  $checktable = mysqli_query($connection,
+      "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_NAME = '$t' AND TABLE_SCHEMA = '$d'");
+
+  if(mysqli_num_rows($checktable) > 0) return true;
+
+  return false;
+}
+?>
+
 </body>
 </html>
+

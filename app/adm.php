@@ -120,6 +120,13 @@
 ?>
 </table>
 
+<?php
+
+  mysqli_free_result($result);
+  mysqli_close($connection);
+
+?>
+
 <div class="footer">
   <h2>Grupo InnovaTech. Todos os direitos reservados.</h2>
 </div>
