@@ -259,10 +259,9 @@
   /* If input fields are populated, add a row to the USERS table. */
   $user_name = htmlentities($_POST['NAME']);
   $user_cellphone = htmlentities($_POST['CELLPHONE']);
-  $user_function = htmlentities($_POST['FUNCTION']);
 
   if (strlen($user_name) || strlen($user_cellphone) || strlen($user_function))  {
-    AddUser($connection, $user_name, $user_cellphone, $user_function);
+    AddUser($connection, $user_name, $user_cellphone);
   }
 ?>
   <!-- Seção de Cadastro -->
@@ -282,11 +281,6 @@
               <span></span>
               <label>CPF</label>
             </div>
-            <div class="txt_field">
-              <input type="text" name="FUNCTION" required>
-              <span></span>
-              <label>Coletor ou Depositor?</label>
-            </div>
             <input type="submit" value="Cadastrar" />
           </table>
         </form>
@@ -304,9 +298,8 @@
 function AddUser($connection, $name, $cellphone) {
    $n = mysqli_real_escape_string($connection, $name);
    $c = mysqli_real_escape_string($connection, $cellphone);
-   $f = mysqli_real_escape_string($connection, $user_function);
 
-   $query = "INSERT INTO USERS (NAME, CELLPHONE) VALUES ('$n', '$c', '$f');";
+   $query = "INSERT INTO USERS (NAME, CELLPHONE) VALUES ('$n', '$c');";
 
    if(!mysqli_query($connection, $query)) echo("<p>Error adding employee data.</p>");
 }
@@ -319,7 +312,6 @@ function VerifyUsersTable($connection, $dbName) {
          ID int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
          NAME VARCHAR(45),
          CELLPHONE VARCHAR(90)
-         FUNCTION VARCHAR(45)
        )";
 
      if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>");
