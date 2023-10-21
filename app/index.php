@@ -6,12 +6,13 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Roboto;
+      font-family: Avantgarde;
       background-repeat: no-repeat;
       background-size: cover;
-      background: linear-gradient(120deg, #ffffff, #00cc76, #73ffca);
+      background: white;
       height: 100%;
-      overflow: auto; /* Adicionando rolagem vertical */
+      overflow: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     h1 {
       color: #333;
@@ -56,7 +57,11 @@
       display: flex;
       justify-content: space-between;
       background-color: #00cc76;
-      padding: 10px 0;
+    }
+    .menu a{
+      height: 5vh;
+      text-align: center;
+      display: inline-block;
     }
     .menu a:hover {
       color: #73ffca;
@@ -73,14 +78,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 29vw;
+    width: 35%;
     background: white;
     border-radius: 10px;
+    border: 1px solid #182119;
+    box-shadow: 10px 10px 0px 0px rgba(0,204,119,1);
+    padding: 20px;
   }
   
   .center h1{
     text-align: center;
-    padding: 0 0 20px 0;
+    padding: 5 5 10px 0 0;
     border-bottom: 1px solid silver;
   }
 
@@ -155,20 +163,23 @@
     text-decoration: underline;
   }
   
-  input[type="Submit"]{
-    width: 100%;
-    height: 50px;
-    border: 1px solid;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    background-color: #00cc76;
-    color: #ffffff;
-  }
+  input[type="Submit"] {
+  display: block; 
+  margin: 0 auto; 
+  width: 70%;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #00cc76;
+  transition: .5s;
+  color: #ffffff;
+}
   
   input[type="Submit"]:hover{
-    background: #73ffca;
+    background: #026b3f;
     color: #e9f4fb;
     transition: .5s;
   }
@@ -213,16 +224,13 @@
 <body>
   <div class="menu">
     <a href="#proposta" class="green-leaf-icon"><i class="fas fa-leaf"></i> Renova</a>
-    <a href="#proposta">Proposta</a>
-    <a href="#produto">Produto</a>
-    <a href="#valor">Valor</a>
+    <a href="#proposta">Sobre</a>
+    <a href="#produto">Nosso Produto</a>
+    <a href="#valor">Valores</a>
     <a href="#cadastro">Cadastro</a>
+    <a href="#cadastro">Contato</a>
     <a href="adm.php" class="icon"><i class="fas fa-user"></i></a>
   </div>
-
-<br>
-<br>
-<br>
 
   <!-- Seção de Cadastro -->
   <section id="cadastro">
@@ -239,11 +247,11 @@
                 <div class="txt_field">
                   <input type="text" name="cpassword" required>
                   <span></span>
-                  <label>Celular</label>
-              </div>
+                  <label>CPF</label>
+                </div>
                 <input type="submit" value="Cadastrar" />
                 <div class="signup_link">
-                    Possui conta? <a href="loginForm.php">Entre aqui</a>
+                    Possui conta? <a href="loginForm.php">Entre aqui!</a>
                 </div>
             </form>
         </div>
