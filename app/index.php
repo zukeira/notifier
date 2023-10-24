@@ -1,4 +1,19 @@
 <?php include "../config.php"; ?>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $cpassword = $_POST['cpassword'];
+    
+    // Verifique se o nome é "Admin" e o CPF é "1234"
+    if ($name === 'Admin' && $cpassword === '123') {
+        // Redirecione para a página "adm.php"
+        header('Location: adm.php');
+        exit; // Certifique-se de encerrar o script após o redirecionamento.
+    }
+}
+?>
+
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
