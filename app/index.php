@@ -1,19 +1,5 @@
 <?php include "../config.php"; ?>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $cpassword = $_POST['cpassword'];
-    
-    // Verifique se o nome é "Admin" e o CPF é "1234"
-    if ($name === 'Admin' && $cpassword === '123') {
-        // Redirecione para a página "adm.php"
-        header('Location: adm.php');
-        exit; // Certifique-se de encerrar o script após o redirecionamento.
-    }
-}
-?>
-
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -279,6 +265,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     AddUser($connection, $user_name, $user_cellphone);
   }
 ?>
+
+
+<script>
+document.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Impede o envio do formulário
+
+  var name = document.querySelector('input[name="NAME"]').value;
+  var cpf = document.querySelector('input[name="CELLPHONE"]').value;
+
+  if (name === 'admin' && cpf === '123') {
+    window.location.href = 'adm.php'; // Redireciona para adm.php
+  } else {
+    // Adicione aqui qualquer ação que deseja realizar quando os valores não coincidem
+    alert('Os valores não coincidem.');
+  }
+});
+</script>
+
   <!-- Seção de Cadastro -->
   <section id="cadastro">
     <div class= "container">
