@@ -276,7 +276,8 @@
             <div class="txt_field">
               <input type="text" name="NAME" required>
               <span></span>
-              <label>Nome</label>
+              <label>Nome completo
+              </label>
             </div>
             <div class="txt_field">
               <input type="text" name="CELLPHONE" required>
