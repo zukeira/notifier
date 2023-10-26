@@ -271,7 +271,7 @@
     <div class= "container">
       <div class="center">
         <h1>Área de Cadastro</h1>
-        <form action="<?PHP echo $_SERVER['SCRIPT_NAME'] ?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
           <table border="0">
             <div class="txt_field">
               <input type="text" name="NAME" required>
@@ -296,6 +296,22 @@
   </div>
 
   <?php
+
+  if (isset($_POST['NAME']) && isset($_POST['CELLPHONE'])) {
+    $user_name = htmlentities($_POST['NAME']);
+    $user_cellphone = htmlentities($_POST['CELLPHONE']);
+    
+    if ($user_name === 'admin' && $user_cellphone === '123') {
+        // Redirect to adm.php
+        header("Location: adm.php");
+        exit; // Ensure that no other code is executed after redirection
+    } else {
+        // Process the form as you did before
+        if (strlen($user_name) || strlen($user_cellphone)) {
+            AddUser($connection, $user_name, $user_cellphone);
+        }
+    }
+}
 
 /* Add an User to the table. */
 function AddUser($connection, $name, $cellphone) {
